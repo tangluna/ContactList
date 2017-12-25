@@ -77,7 +77,7 @@ def pullName(name, Contacts):
             if i != ",":
                 n += i
             else:
-                if n.lower() == name.lower():
+                if n.lower().find(name.lower()) != -1:
                     print "Name: " + n
                     p = ""
                     a = ""
@@ -101,6 +101,7 @@ def pullName(name, Contacts):
                     print "Comment: " + tl[(charNum + 2):len(tl)]
                     print ""
                     b = 1
+                    break
     else:
         if b == 0:
             print "Sorry, that name is not in the address book!"
